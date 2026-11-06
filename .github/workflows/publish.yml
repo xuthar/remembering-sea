@@ -49,6 +49,7 @@ jobs:
           mkdir -p public
           cp index.html archive.html poetry.html robots.txt sitemap.xml .nojekyll public/
           cp -R assets content public/
+          cp -R naturia public/
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
       - name: Upload site
