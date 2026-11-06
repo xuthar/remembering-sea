@@ -1,0 +1,31 @@
+name: Sync YouTube videos and Shorts
+on:
+  schedule:
+    - cron: '18 6 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install YouTube metadata reader
+        run: python -m pip install --upgrade yt-dlp
+      - name: Collect public uploads only
+        run: python scripts/sync_youtube.py --limit 500
+      - name: Commit verified metadata if changed
+        run: |
+          if ! git diff --quiet -- content/videos.json; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git add content/videos.json
+            git commit -m 'chore: refresh public YouTube catalog'
+            git push
+          else
+            echo 'No changes to publish.'
+          fi
