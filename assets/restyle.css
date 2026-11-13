@@ -1,0 +1,256 @@
+/* Compact editorial restyle — shared by the home, archive and poetry pages. */
+:root {
+  --page: min(1220px, calc(100% - 88px));
+  --line: rgba(195, 215, 216, .2);
+}
+html { scroll-padding-top: 76px; }
+.site-header {
+  height: 76px;
+  padding-inline: max(36px, calc((100vw - 1260px) / 2));
+  background: linear-gradient(180deg, rgba(4, 17, 24, .72), rgba(4, 17, 24, .12));
+  backdrop-filter: blur(9px);
+}
+.wordmark { gap: 10px; }
+.mark { width: 42px; height: 31px; }
+.wordmark strong { font-size: 25px; }
+.wordmark small { font-size: 8px; letter-spacing: 2.8px; }
+.main-nav { gap: clamp(14px, 2vw, 27px); }
+.main-nav > a { font-size: 10px; letter-spacing: 1.1px; }
+.main-nav .nav-youtube { padding-left: 18px; }
+.hero {
+  height: min(790px, 82svh);
+  min-height: 620px;
+}
+.hero-overlay {
+  background: linear-gradient(90deg, rgba(3,17,27,.78), rgba(3,17,27,.40) 48%, rgba(3,17,27,.06) 100%),
+              linear-gradient(0deg, rgba(5,21,29,.86), transparent 32%, rgba(5,21,29,.26));
+}
+.hero-content { padding-top: clamp(155px, 20vh, 205px); }
+.hero h1 { font-size: clamp(86px, 10vw, 154px); margin-bottom: 27px; }
+.hero-rule { margin: 0 0 19px; width: 54px; }
+.hero-verse { font-size: clamp(22px, 2vw, 30px); margin-bottom: 24px; }
+.hero .btn { min-height: 44px; padding: 12px 18px; }
+.hero-bottom { bottom: 22px; font-size: 8px; letter-spacing: 1.6px; }
+.scroll-indicator { height: 28px; }
+.section-space { padding-block: 78px; }
+.section-index {
+  gap: 20px;
+  margin-bottom: 38px;
+  font-size: 8px;
+  letter-spacing: 2px;
+}
+.section-index > span:first-child { color: var(--sand); }
+.display-title { font-size: clamp(48px, 5vw, 76px); }
+.intro-grid { grid-template-columns: 1.05fr .95fr; gap: 8%; }
+.intro-heading .eyebrow { margin-bottom: 20px; }
+.intro-copy {
+  position: relative;
+  padding: 16px 0 10px 26px;
+  border-left: 1px solid rgba(219,197,170,.55);
+}
+.intro-copy .star-glyph { position: absolute; top: 4px; right: 6px; font-size: 24px; }
+.intro-copy p { font-size: clamp(19px, 1.55vw, 24px); margin: 0 22px 12px 0; }
+.intro-copy p + p { font-size: 12px; line-height: 1.75; margin: 12px 0 0; }
+.underlined-link { margin-top: 17px; padding-bottom: 6px; font-size: 9px; }
+.interlude {
+  height: 300px;
+  justify-content: flex-start;
+  text-align: left;
+  padding-inline: max(44px, calc((100vw - 1220px) / 2));
+}
+.interlude-content { max-width: 700px; }
+.interlude .eyebrow { margin-bottom: 12px; font-size: 9px; }
+.interlude p { font-size: clamp(34px, 4.1vw, 58px); }
+.interlude-credit { margin-top: 15px; font-size: 8px; }
+.section-top { gap: 36px; margin-bottom: 30px; }
+.section-aside { max-width: 290px; font-size: 12px; line-height: 1.75; }
+.section-aside .underlined-link { margin-top: 14px; }
+.video-grid { gap: 17px; }
+.channel-empty {
+  min-height: 300px;
+  grid-template-columns: 1.05fr 1fr;
+  border-color: rgba(213,201,178,.28);
+}
+.channel-empty-picture { min-height: 270px; }
+.channel-empty-content { padding: 28px clamp(25px, 4vw, 58px); }
+.channel-empty-content .eyebrow { margin-bottom: 12px; }
+.channel-empty h3 { font-size: clamp(38px, 4vw, 52px); margin-bottom: 12px; }
+.channel-empty p { font-size: 12px; line-height: 1.7; margin: 0; }
+.channel-empty .btn { margin-top: 13px; }
+.video-cover { outline: 1px solid rgba(230,239,236,.12); outline-offset: -1px; }
+.video-play span { width: 45px; height: 45px; }
+.video-meta { padding-top: 12px; }
+.video-meta h3 { font-size: 23px; margin-top: 5px; }
+.section-footnote { margin-top: 24px; padding-top: 14px; font-size: 8px; }
+.shorts-section { background: #0d2931; }
+.shorts-grid { min-height: 300px; grid-template-columns: 1.35fr .65fr; gap: 17px; }
+.shorts-placeholder { min-height: 300px; }
+.shorts-pill { top: 18px; left: 19px; font-size: 8px; }
+.shorts-placeholder-text { font-size: clamp(34px, 3.8vw, 54px); }
+.circle-arrow { width: 43px; height: 43px; right: 18px; bottom: 18px; }
+.shorts-note { padding: 20px 24px; min-height: 300px; }
+.shorts-number { font-size: 76px; }
+.shorts-note p { font-size: 27px; margin: 10px 0; }
+.shorts-grid.populated { gap: 14px; }
+.short-card { max-height: 350px; }
+.short-card-overlay { padding: 13px; }
+.short-card h3 { font-size: 22px; }
+.poetry-layout { gap: 8%; grid-template-columns: .95fr 1.05fr; }
+.poetry-image { margin-top: 0; }
+.poetry-image img { aspect-ratio: 5 / 4; }
+.image-caption { bottom: 17px; left: 18px; font-size: 8px; }
+.poetry-content .display-title { margin-bottom: 25px; }
+.poetry-fragment { font-size: clamp(20px, 1.8vw, 27px); }
+.poem-byline { margin: 18px 0 20px; font-size: 8px; }
+.poetry-subtext { font-size: 12px; line-height: 1.7; margin-bottom: 18px; }
+.poetry-content .btn { min-height: 43px; padding: 11px 17px; }
+.quote-band { padding: 54px 0; }
+.quote-band blockquote { font-size: clamp(34px, 4.7vw, 60px); margin: 8px auto 18px; }
+.shuffle-button { font-size: 8px; letter-spacing: 1.6px; }
+.gallery-grid { grid-template-rows: 205px 205px; gap: 13px; }
+.gallery-image { outline: 1px solid rgba(230,239,236,.12); outline-offset: -1px; }
+.gallery-image figcaption {
+  left: 13px; bottom: 13px; font-size: 8px; letter-spacing: 1.4px;
+  padding: 5px 8px; background: rgba(5,20,27,.62); backdrop-filter: blur(5px);
+}
+.photo-credit { margin-top: 14px; font-size: 9px; }
+.about-layout { padding-block: 82px; grid-template-columns: .6fr 1.4fr; gap: 54px; }
+.about-emblem { font-size: 220px; margin-top: 2px; }
+.about-copy .display-title { margin-bottom: 22px; }
+.about-copy p { font-size: 12px; line-height: 1.8; margin: 10px 0; }
+.about-copy .btn { margin-top: 12px; min-height: 43px; padding: 11px 17px; }
+.footer-top { padding: 42px 0 32px; }
+.footer-brand { font-size: 42px; }
+.footer-top p { font-size: 16px; margin: 9px 0 0; }
+.footer-links { gap: 8px 25px; }
+.footer-links a { font-size: 11px; }
+.footer-bottom { padding: 17px 0 23px; font-size: 7px; }
+/* Inner pages */
+.inner-page .site-header { height: 70px; }
+.inner-hero { min-height: 350px; }
+.inner-hero .page-shell { padding: 62px 0 48px; }
+.inner-hero h1 { font-size: clamp(64px, 8vw, 112px); margin-bottom: 19px; }
+.inner-hero p:not(.eyebrow) { max-width: 520px; font-size: 23px; }
+.poems-main { padding: 65px 0 85px; }
+.poems-intro { gap: 40px; margin-bottom: 55px; }
+.poems-intro h2 { font-size: 42px; }
+.poems-intro p { font-size: 13px; line-height: 1.75; }
+.poem-grid { column-gap: 7%; row-gap: 55px; }
+.poem-article { padding-top: 19px; }
+.poem-article:nth-child(even) { transform: translateY(35px); }
+.poem-article h2 { font-size: clamp(34px, 3vw, 48px); margin: 15px 0 18px; }
+.poem-article p { font-size: clamp(19px, 1.7vw, 24px); line-height: 1.43; }
+.poem-footnote { margin-top: 22px; font-size: 8px; }
+.poem-final { margin-top: 110px; padding: 56px 25px; }
+.poem-final p { font-size: 39px; }
+.archive-section { padding: 65px 0 85px; }
+.archive-section .video-grid { margin-top: 20px; }
+.archive-note { margin-bottom: 18px; font-size: 12px; }
+.archive-controls { margin-bottom: 24px; }
+.filter-button { padding: 8px 16px; }
+.archive-section [data-section-type] > h2 { margin: 28px 0 20px !important; }
+.archive-section .shorts-grid { gap: 14px; }
+@media (max-width: 800px) {
+  :root { --page: calc(100% - 44px); }
+  .site-header { height: 70px; padding-inline: 22px; }
+  .wordmark strong { font-size: 24px; }
+  .mark { width: 37px; }
+  .main-nav { top: 69px; gap: 0; padding: 13px 22px 20px; }
+  .main-nav > a { padding: 10px 0; }
+  .hero { min-height: 600px; height: 82svh; }
+  .hero-content { padding-top: 170px; }
+  .hero h1 { font-size: clamp(76px, 13vw, 115px); margin-bottom: 25px; }
+  .hero-verse { font-size: 24px; }
+  .hero-actions { gap: 18px; }
+  .hero-bottom { bottom: 17px; }
+  .section-space { padding-block: 60px; }
+  .section-index { margin-bottom: 29px; }
+  .intro-grid, .poetry-layout, .about-layout { gap: 28px; }
+  .intro-heading .eyebrow { margin-bottom: 14px; }
+  .intro-copy { padding: 12px 0 6px 19px; }
+  .interlude { height: 260px; padding-inline: 22px; }
+  .section-top { margin-bottom: 23px; gap: 12px; }
+  .channel-empty { min-height: 0; }
+  .channel-empty-picture { min-height: 230px; }
+  .channel-empty-content { padding: 24px; }
+  .shorts-grid { min-height: 0; gap: 12px; }
+  .shorts-placeholder, .shorts-note { min-height: 260px; }
+  .shorts-grid.populated { grid-template-columns: repeat(4, minmax(0,1fr)); }
+  .short-card { max-height: 290px; }
+  .poetry-image img { max-height: 380px; aspect-ratio: 16 / 10; }
+  .about-layout { padding-block: 58px; }
+  .about-emblem { display: none; }
+  .gallery-grid { grid-template-rows: 185px 185px; }
+  .footer-top { padding: 32px 0 25px; }
+  .inner-hero { min-height: 315px; }
+  .inner-hero .page-shell { padding: 50px 0 40px; }
+  .poems-main, .archive-section { padding-block: 50px 65px; }
+  .poems-intro { margin-bottom: 38px; }
+  .poem-grid { row-gap: 40px; }
+  .poem-article:nth-child(even) { transform: translateY(20px); }
+}
+@media (max-width: 540px) {
+  :root { --page: calc(100% - 36px); }
+  .site-header { padding-inline: 18px; }
+  .wordmark strong { font-size: 22px; }
+  .wordmark small { font-size: 7px; letter-spacing: 2px; }
+  .mark { width: 32px; }
+  .hero { min-height: 590px; height: 84svh; }
+  .hero-content { padding-top: 158px; }
+  .hero h1 { font-size: clamp(58px, 14vw, 78px); letter-spacing: -2px; margin-bottom: 26px; }
+  .hero h1 em { padding-left: 16px; }
+  .hero-verse { font-size: 21px; margin-bottom: 19px; }
+  .hero-actions { gap: 13px; }
+  .hero-actions .btn { min-height: 42px; }
+  .hero-bottom { font-size: 7px; letter-spacing: 1.2px; }
+  .section-space { padding-block: 49px; }
+  .section-index { gap: 12px; margin-bottom: 24px; font-size: 7px; }
+  .display-title { font-size: clamp(43px, 12vw, 62px); }
+  .intro-grid, .poetry-layout, .about-layout { grid-template-columns: 1fr; gap: 23px; }
+  .intro-copy p { font-size: 20px; }
+  .intro-copy p + p { font-size: 12px; }
+  .interlude { height: 235px; padding-inline: 18px; }
+  .interlude p { font-size: 34px; }
+  .section-top { align-items: flex-start; }
+  .section-aside { font-size: 11px; }
+  .channel-empty-picture { min-height: 180px; }
+  .channel-empty-content { padding: 20px; }
+  .channel-empty h3 { font-size: 40px; }
+  .video-grid { grid-template-columns: 1fr; gap: 20px; }
+  .shorts-grid { grid-template-columns: 1fr; }
+  .shorts-placeholder { min-height: 245px; }
+  .shorts-note { min-height: 190px; }
+  .shorts-number { font-size: 58px; }
+  .shorts-note p { font-size: 24px; }
+  .shorts-grid.populated { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; }
+  .short-card { max-height: 320px; }
+  .poetry-image img { aspect-ratio: 16 / 10; max-height: 260px; }
+  .poetry-content .display-title { margin-bottom: 17px; }
+  .poetry-fragment { font-size: 21px; }
+  .quote-band { padding: 43px 0; }
+  .quote-band blockquote { font-size: 36px; }
+  .gallery-grid { grid-template-rows: 175px 130px 175px; gap: 9px; }
+  .gallery-image figcaption { font-size: 7px; }
+  .about-layout { padding-block: 48px; }
+  .footer-brand { font-size: 37px; }
+  .footer-top p { font-size: 14px; }
+  .footer-bottom { font-size: 6px; letter-spacing: 1px; gap: 10px; }
+  .inner-hero { min-height: 285px; }
+  .inner-hero .page-shell { padding-block: 43px 30px; }
+  .inner-hero h1 { font-size: clamp(58px, 16vw, 84px); }
+  .inner-hero p:not(.eyebrow) { font-size: 20px; }
+  .poems-main, .archive-section { padding-block: 42px 55px; }
+  .poems-intro, .poem-grid { grid-template-columns: 1fr; }
+  .poems-intro { gap: 15px; margin-bottom: 30px; }
+  .poems-intro h2 { font-size: 36px; }
+  .poem-grid { row-gap: 35px; }
+  .poem-article:nth-child(even) { transform: none; }
+  .poem-article h2 { font-size: 36px; }
+  .poem-article p { font-size: 19px; }
+  .poem-final { margin-top: 65px; padding: 42px 12px; }
+  .poem-final p { font-size: 34px; }
+  .archive-section .shorts-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-image { animation: none; }
+}
